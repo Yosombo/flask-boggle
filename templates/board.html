@@ -1,0 +1,20 @@
+{%extends 'base.html'%} {%block content%}
+<div class="container">
+  <div id="board">
+    {%for row in board%} {%for char in row%}
+    <div class="char">{{char}}</div>
+    {%endfor%} {%endfor%}
+  </div>
+
+  <form method="POST" id="wordForm">
+    <input id="word" type="text" name="word" autofocus />
+    <button>Check</button>
+  </form>
+  <div class="toolbar">Score: <span id="score"></span></div>
+  <div class="toolbar">Time: <span id="timer"></span></div>
+  <div id="info" class="toolbar"></div>
+  <div id="sumbitScore" class="toolbar">
+    <button><a href="/restart">Restart</a></button>
+  </div>
+</div>
+{%endblock%}
