@@ -12,8 +12,10 @@ toolbar = DebugToolbarExtension(app)
 boggle_game = Boggle()
 
 
-@app.route('/',  methods=["post", 'get'])
+@app.route('/')
 def render_board():
+    board = boggle_game.make_board()
+    session['board'] = board
     return render_template('board.html', board=session['board'])
 
 

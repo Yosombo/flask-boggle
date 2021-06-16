@@ -52,7 +52,7 @@ async function postScore() {
 
 function startTimer() {
   $sumbitScore.hide();
-  let time = 60;
+  let time = 6;
   let sec = async () => {
     if (time <= 0) {
       $sumbitScore.show();
